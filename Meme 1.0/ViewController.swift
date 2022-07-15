@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
-    
+    // MARK: Outlets
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     
+    //MARK: Views
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +47,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    // MARK: Text field behavior
+    //MARK: Text field behavior
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == topTextField && textField.text == "TOP" || textField == bottomTextField && textField.text == "BOTTOM" {
@@ -108,6 +109,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.cgRectValue.height
     }
     
+    //MARK: Action selectors
+    
     @IBAction func pickAnImage(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -163,7 +166,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    //MARK: Meme Editor
+    //MARK: Meme Model
+    //Meme holder
     struct Meme {
         let topText: String
         let bottomText: String
