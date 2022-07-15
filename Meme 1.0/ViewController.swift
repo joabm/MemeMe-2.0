@@ -60,17 +60,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Text field behavior
 
+    //clears the textfield when the user starts typing
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == topTextField && textField.text == "TOP" || textField == bottomTextField && textField.text == "BOTTOM" {
             textField.text = ""
         }
     }
     
+    //dismisses the keyboard when the return button is selected by the user
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+    //defines the textfield attributes programatically
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
@@ -98,6 +101,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
+    
     //resets the frame height
     @objc func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y = 0
@@ -134,7 +138,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //brings the generated meme to the activity view and presents activity view sharing options
         let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        
         present(activityController, animated: true, completion: nil)
         
         //saves the meme to the Meme Struct when the meme is saved in the activityview
@@ -171,6 +174,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     //MARK: Meme Model
+    
     //Meme holder
     struct Meme {
         let topText: String
