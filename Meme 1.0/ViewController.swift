@@ -47,6 +47,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        subscribeToKeyboardNotifications()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+    }
+    
     //MARK: Text field behavior
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -69,17 +80,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: keboard behavior
     
-    override func viewWillAppear(_ animated: Bool) {
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        subscribeToKeyboardNotifications()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-
-        super.viewWillDisappear(animated)
-        unsubscribeFromKeyboardNotifications()
-    }
-    
     func subscribeToKeyboardNotifications() {
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -92,12 +92,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    //keeps the keyboard from covering the input field by removing the height of the keyboard from the views frame.  Only needed on the bottom text.
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottomTextField.isEditing {
         view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
-    
+    //resets the frame height
     @objc func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y = 0
     }
@@ -120,28 +121,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            present(imagePicker, animated: true, completion: nil)
-        }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
     
     @IBAction func shareMeme(_ sender: Any){
         let image = generateMemedImage()
         
+        //brings the generated meme to the activity view and presents activity view sharing options
         let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
-        activityController.completionWithItemsHandler = {activity, completed, items, error in
-            if completed && error == nil {
+        present(activityController, animated: true, completion: nil)
+        
+        //saves the meme to the Meme Struct when the meme is saved in the activityview
+        activityController.completionWithItemsHandler = {(activity, completed, items, error) in
+            if completed {
                 self.save()
-                //self.dismiss(animated: true, completion: nil)
             }
         }
-        
-        present(activityController, animated: true, completion: nil)
     }
     
+    //resets the view when the user chooses to stop working with the meme
     @IBAction func cancelMeme(_sender: Any) {
         setInitialView()
     }
@@ -175,13 +177,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage:UIImage
     }
     
-    //create and save the meme
+    //create and save the Meme
     func save() {
         _  = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
     }
     
     func generateMemedImage() -> UIImage {
         
+        //removes the nav and toolbar from the saved meme
         navigationBar.isHidden = true
         toolbar.isHidden = true
 
@@ -191,6 +194,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
+        //unhides the bars after the image is captured
         navigationBar.isHidden = false
         toolbar.isHidden = false
 
