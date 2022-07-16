@@ -171,15 +171,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: Meme Model
     
-    //Meme holder
-    struct Meme {
-        let topText: String
-        let bottomText: String
-        let originalImage:UIImage
-        let memedImage:UIImage
-    }
-    
-    //create and save the Meme
+    //create and save the Meme.  the Meme struct is a model (see Meme file) used by this ViewController
     func save() {
         _  = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
     }
