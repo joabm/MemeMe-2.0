@@ -137,7 +137,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(activityController, animated: true, completion: nil)
         
         //saves the meme to the Meme Struct when the meme is saved in the activityview
-        activityController.completionWithItemsHandler = {(activity, completed, items, error) in
+        activityController.completionWithItemsHandler = {(_, completed, _, _) in
             if completed {
                 self.save()
             }
