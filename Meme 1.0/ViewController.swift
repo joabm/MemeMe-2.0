@@ -114,20 +114,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //image picker is presented with access to the photo library
     @IBAction func pickAnImage(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
-        
+        pickImage(source: .photoLibrary)
     }
     
     //image picker access is presented with access to the camera
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
+        pickImage(source: .camera)
+    }
+    
+    func pickImage(source: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
-    }
+        }
     
     @IBAction func shareMeme(_ sender: Any){
         let image = generateMemedImage()
