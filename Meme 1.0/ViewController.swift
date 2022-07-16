@@ -23,27 +23,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Views
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Set the text field delegates
-        self.topTextField.delegate = self
-        self.bottomTextField.delegate = self
-        
-        //set text field attribites
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        
         setInitialView()
     }
 
     //for the initial view and cancel sharing the meme
     func setInitialView(){
-        topTextField.text = "TOP"
-        topTextField.textAlignment = .center
-        bottomTextField.text = "BOTTOM"
-        bottomTextField.textAlignment = .center
+        setupTextField(textField: topTextField, text: "TOP")
+        setupTextField(textField: bottomTextField, text: "BOTTOM")
         imagePickerView.image = nil
         shareButton.isEnabled = false
         cancelButton.isEnabled = false
+        
+    }
+    
+    func setupTextField(textField: UITextField, text: String) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.text = text
+        textField.textAlignment = .center
+        textField.delegate = self
         
     }
     
