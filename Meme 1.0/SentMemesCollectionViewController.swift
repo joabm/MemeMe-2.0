@@ -24,6 +24,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        collectionView.reloadData()
     }
     
     // MARK: Collection View Data Source
@@ -38,7 +39,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
         // Set the image
-        cell.memedImageVeiw?.image = meme.memedImage
+        cell.imageView?.image = meme.memedImage
         
         return cell
     }
