@@ -254,21 +254,30 @@
         <!--Meme Detail View Controller-->
         <scene sceneID="TYf-gd-6tj">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="SIZ-ca-Mcw" customClass="MemeDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" modalPresentationStyle="fullScreen" id="SIZ-ca-Mcw" customClass="MemeDetailViewController" customModule="Meme_1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nEF-6Y-iIa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NnW-W8-QKb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RPx-r3-XWn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="NnW-W8-QKb" id="ZiR-8S-AU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckk-47-cDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="461"/>
+            <point key="canvasLocation" x="650.72463768115949" y="460.71428571428567"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9nD-EJ-yrO"/>
+        <segue reference="ctV-tQ-Fh8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
