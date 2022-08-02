@@ -10,6 +10,8 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     // MARK: Properties
     
     //Access the memes array in AppDelegate
@@ -25,6 +27,18 @@ class SentMemesCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
         collectionView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let space:CGFloat = 3.0
+        let dimensionWidth = (view.frame.size.width - (2 * space)) / 3.0
+        let dimensionHeight = (view.frame.size.height - (2 * space)) / 3.0
+
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimensionWidth, height: dimensionHeight)
     }
     
     // MARK: Collection View Data Source
