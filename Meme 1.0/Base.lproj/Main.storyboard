@@ -93,6 +93,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="Bgv-A1-S18" id="fZH-5Z-1J6"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKk-ee-Uw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,12 +190,12 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4J-8J-ba9" userLabel="TopText">
-                                <rect key="frame" x="0.0" y="118" width="414" height="18.5"/>
+                                <rect key="frame" x="0.0" y="158" width="414" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptw-eg-qmh" userLabel="Bottom Text">
-                                <rect key="frame" x="0.0" y="764.5" width="414" height="18.5"/>
+                                <rect key="frame" x="0.0" y="724.5" width="414" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -221,7 +224,7 @@
                             <constraint firstItem="x4J-8J-ba9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3h5-tO-EsV"/>
                             <constraint firstItem="QnA-9Z-eE1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AhZ-q6-gmY"/>
                             <constraint firstItem="QnA-9Z-eE1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GcG-GH-RsH"/>
-                            <constraint firstItem="x4J-8J-ba9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="H9O-EB-ub7"/>
+                            <constraint firstItem="x4J-8J-ba9" firstAttribute="top" secondItem="5kw-ZA-L3r" secondAttribute="bottom" constant="70" id="H9O-EB-ub7"/>
                             <constraint firstItem="CBH-RT-JJk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="INP-Ia-as6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ptw-eg-qmh" secondAttribute="trailing" id="MPf-mV-Caj"/>
                             <constraint firstItem="QnA-9Z-eE1" firstAttribute="top" secondItem="5kw-ZA-L3r" secondAttribute="bottom" id="Wm8-4F-3Is"/>
@@ -231,7 +234,7 @@
                             <constraint firstItem="CBH-RT-JJk" firstAttribute="top" secondItem="QnA-9Z-eE1" secondAttribute="bottom" id="fhl-va-Ufw"/>
                             <constraint firstItem="5kw-ZA-L3r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lHl-IT-4F0"/>
                             <constraint firstItem="CBH-RT-JJk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o5n-fw-3pD"/>
-                            <constraint firstItem="CBH-RT-JJk" firstAttribute="top" secondItem="ptw-eg-qmh" secondAttribute="bottom" constant="30" id="tbf-ho-mdS"/>
+                            <constraint firstItem="CBH-RT-JJk" firstAttribute="top" secondItem="ptw-eg-qmh" secondAttribute="bottom" constant="70" id="tbf-ho-mdS"/>
                             <constraint firstItem="5kw-ZA-L3r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zUQ-sB-MSX"/>
                         </constraints>
                     </view>
@@ -259,13 +262,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NnW-W8-QKb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NnW-W8-QKb">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RPx-r3-XWn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NnW-W8-QKb" firstAttribute="trailing" secondItem="RPx-r3-XWn" secondAttribute="trailing" id="7dT-Ln-jQX"/>
+                            <constraint firstItem="NnW-W8-QKb" firstAttribute="leading" secondItem="RPx-r3-XWn" secondAttribute="leading" id="DaW-cA-eYN"/>
+                            <constraint firstItem="NnW-W8-QKb" firstAttribute="bottom" secondItem="RPx-r3-XWn" secondAttribute="bottom" id="L7m-wW-58o"/>
+                            <constraint firstItem="NnW-W8-QKb" firstAttribute="top" secondItem="RPx-r3-XWn" secondAttribute="top" id="lOz-QI-7sT"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="NnW-W8-QKb" id="ZiR-8S-AU7"/>
@@ -273,11 +281,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckk-47-cDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="650.72463768115949" y="460.71428571428567"/>
+            <point key="canvasLocation" x="643" y="469"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ctV-tQ-Fh8"/>
+        <segue reference="9nD-EJ-yrO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
