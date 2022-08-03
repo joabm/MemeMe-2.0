@@ -32,7 +32,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         setupTextField(textField: bottomTextField, text: "BOTTOM")
         imagePickerView.image = nil
         shareButton.isEnabled = false
-        cancelButton.isEnabled = false
+        cancelButton.isEnabled = true
         
     }
     
