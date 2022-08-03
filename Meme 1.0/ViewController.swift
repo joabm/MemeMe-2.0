@@ -147,7 +147,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //resets the view when the user chooses to stop working with the meme
     @IBAction func cancelMeme(_sender: Any) {
-        setInitialView()
+        self.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(
