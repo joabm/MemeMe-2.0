@@ -156,7 +156,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 imagePickerView.image = image
             } else {
-                print("error")
+                debugPrint("error")
             }
             
             //enable share and cancel buttons after picking an image
