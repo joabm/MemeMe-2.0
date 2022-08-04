@@ -43,11 +43,11 @@
             </objects>
             <point key="canvasLocation" x="-1728" y="84"/>
         </scene>
-        <!--Sent Memes Collection View Controller-->
+        <!--Shared Memes-->
         <scene sceneID="ooQ-Ka-YfB">
             <objects>
                 <collectionViewController id="rka-Jq-I2k" customClass="SentMemesCollectionViewController" customModule="Meme_1_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fmX-6r-c1R">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fmX-6r-c1R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,14 +58,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionViewCell" id="jUr-bV-cd0" customClass="MemeCollectionViewCell" customModule="Meme_1_0" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="jUr-bV-cd0" customClass="MemeCollectionViewCell" customModule="Meme_1_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKU-YU-umC" userLabel="Memed Image View">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKU-YU-umC" userLabel="Memed Image View">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -81,10 +81,10 @@
                             <outlet property="delegate" destination="rka-Jq-I2k" id="C2w-Y0-aNz"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="OL4-hU-qWq">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="7s0-jT-9k1">
+                    <navigationItem key="navigationItem" title="Shared Memes" id="cre-Ao-hkQ">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="GZI-Ct-bHb">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="9nD-EJ-yrO"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="5Cc-hf-lTW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -113,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="-1729" y="727"/>
         </scene>
-        <!--Sent Memes Table View Controller-->
+        <!--Shared Memes-->
         <scene sceneID="f2l-EZ-bv8">
             <objects>
                 <tableViewController id="VWI-mu-S0K" customClass="SentMemesTableViewController" customModule="Meme_1_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -145,7 +145,7 @@
                             <outlet property="delegate" destination="VWI-mu-S0K" id="9Tx-BY-057"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4WE-zo-KK8">
+                    <navigationItem key="navigationItem" title="Shared Memes" id="4WE-zo-KK8">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="zqn-Gz-efa">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="ctV-tQ-Fh8"/>
@@ -189,7 +189,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptw-eg-qmh" userLabel="Bottom Text">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptw-eg-qmh" userLabel="Bottom Text">
                                 <rect key="frame" x="0.0" y="724.5" width="414" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -276,11 +276,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckk-47-cDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643" y="469"/>
+            <point key="canvasLocation" x="642.02898550724638" y="468.75"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9nD-EJ-yrO"/>
+        <segue reference="5Cc-hf-lTW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
