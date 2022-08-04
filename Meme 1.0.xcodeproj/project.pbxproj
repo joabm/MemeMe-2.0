@@ -17,6 +17,7 @@
 		486200642895D57000BDB9E9 /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486200632895D57000BDB9E9 /* SentMemesTableViewController.swift */; };
 		486200662895D5E700BDB9E9 /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486200652895D5E700BDB9E9 /* SentMemesCollectionViewController.swift */; };
 		486200682895FC5500BDB9E9 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486200672895FC5500BDB9E9 /* MemeCollectionViewCell.swift */; };
+		48CE088C289C1D3B00D023EC /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48CE088B289C1D3B00D023EC /* Impact.ttf */; };
 		48CEE13628828F010003037F /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEE13528828F010003037F /* Meme.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		486200632895D57000BDB9E9 /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 		486200652895D5E700BDB9E9 /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 		486200672895FC5500BDB9E9 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		48CE088B289C1D3B00D023EC /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
 		48CEE13528828F010003037F /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,10 +78,19 @@
 				48CEE13528828F010003037F /* Meme.swift */,
 				483E37F2287B882500A25683 /* Main.storyboard */,
 				483E37F5287B882600A25683 /* Assets.xcassets */,
+				48CE088A289C1D3B00D023EC /* Fonts */,
 				483E37F7287B882600A25683 /* LaunchScreen.storyboard */,
 				483E37FA287B882600A25683 /* Info.plist */,
 			);
 			path = "Meme 1.0";
+			sourceTree = "<group>";
+		};
+		48CE088A289C1D3B00D023EC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				48CE088B289C1D3B00D023EC /* Impact.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CE088C289C1D3B00D023EC /* Impact.ttf in Resources */,
 				483E37F9287B882600A25683 /* LaunchScreen.storyboard in Resources */,
 				483E37F6287B882600A25683 /* Assets.xcassets in Resources */,
 				483E37F4287B882500A25683 /* Main.storyboard in Resources */,
