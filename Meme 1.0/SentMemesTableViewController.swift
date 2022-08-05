@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+class MemeTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var memeLabel: UILabel!
+    
+}
+
 class SentMemesTableViewController: UITableViewController {
     
     // MARK: Properties
@@ -30,12 +37,12 @@ class SentMemesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell", for: indexPath) as! MemeTableViewCell
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
         // Set the text and image
-        cell.textLabel?.text = meme.topText + "..." + meme.bottomText
-        cell.imageView?.image = meme.memedImage
+        cell.memeLabel?.text = meme.topText + "..." + meme.bottomText
+        cell.memeImage?.image = meme.memedImage
         
         return cell
     }

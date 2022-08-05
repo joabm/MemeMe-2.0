@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SentMemesCollectionViewController: UICollectionViewController {
+class SentMemesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
@@ -32,7 +32,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let space:CGFloat = 5.0
+        let space:CGFloat = 3.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
 
         flowLayout.minimumInteritemSpacing = space
