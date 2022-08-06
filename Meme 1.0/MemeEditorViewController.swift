@@ -76,7 +76,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.font: UIFont(name: "Impact", size: 40)!,
-        NSAttributedString.Key.strokeWidth: -4.0
+        NSAttributedString.Key.strokeWidth: -5.0
     ]
     
     //MARK: keboard behavior
@@ -139,9 +139,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
-    //resets the view when the user chooses to stop working with the meme
+    //dismisses the view when the user selects the cancel button
     @IBAction func cancelMeme(_sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(
