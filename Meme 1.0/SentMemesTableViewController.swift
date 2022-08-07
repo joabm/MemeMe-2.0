@@ -20,25 +20,24 @@ class SentMemesTableViewController: UITableViewController {
     // MARK: Properties
     
     //Access the memes array in AppDelegate
-    var memes: [Meme]! {
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        return appDelegate.memes
-    }
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+    
     // MARK: Table View Data Source
     
+    //determine number of rows in table
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.memes.count
+        return appDelegate.memes.count
     }
     
+    //add meme data to the cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell", for: indexPath) as! MemeTableViewCell
-        let meme = self.memes[(indexPath as NSIndexPath).row]
+        let meme = appDelegate.memes[(indexPath as NSIndexPath).row]
         
         // Set the text and image
         cell.memeLabel?.text = meme.topText + "..." + meme.bottomText
@@ -47,10 +46,19 @@ class SentMemesTableViewController: UITableViewController {
         return cell
     }
     
+    //present MemeDetailView when row is selected
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
-        detailController.memeDetail = self.memes[(indexPath as NSIndexPath).row]
+        detailController.memeDetail = appDelegate.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
+    }
+    
+    //delete row from tableView and memes object on swipe
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            appDelegate.memes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
     }
 }
