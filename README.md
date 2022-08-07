@@ -1,4 +1,4 @@
-# MemeMe-1.0
+# MemeMe-2.0, The Final Product
 
 ## Table of Contents
   - Description
@@ -6,7 +6,10 @@
   - Depencendies
   
  ## Description
-  - This app allows a user to select a picture from the photo library or camera and create a meme by typing into the top and bottom text fields.
+  - This presents a library of shared memes to the user in either a table or collection view.  
+  - The user can get a detailed view of each meme by tapping on a meme.
+  - The app allows a user to select a picture from the photo library or camera and create a meme by typing into the top and bottom text fields.
+  - The user can delete a meme from the library by swiping to the left in the table view.
   
  ## How to Use
   - load the app into Xcode to begin working with the app.
