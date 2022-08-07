@@ -4,6 +4,7 @@
   - Description
   - How to Use
   - Depencendies
+  - Resources
   
  ## Description
   - This presents a library of shared memes to the user in either a table or collection view.  
@@ -18,3 +19,6 @@
 ## Dependencies 
   - This code was written with Swift 5 in Xcode 13.4.1
   - This app was written for use with iPhone
+  
+## Resources
+  - Thanks to IOS Creator for this great tutorial on delete to swipe.  https://www.ioscreator.com/tutorials/delete-rows-table-view-ios-tutorial-ios12
