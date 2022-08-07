@@ -33,7 +33,7 @@ class SentMemesTableViewController: UITableViewController {
         return appDelegate.memes.count
     }
     
-    //add meme data to the cells
+    //add meme data to the table view cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell", for: indexPath) as! MemeTableViewCell

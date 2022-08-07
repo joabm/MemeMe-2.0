@@ -15,11 +15,7 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     // MARK: Properties
     
     //Access the memes array in AppDelegate
-    var memes: [Meme]! {
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        return appDelegate.memes
-    }
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     // MARK: Life Cycle
     
@@ -34,7 +30,7 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         
         let space:CGFloat = 3.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
-
+        
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
@@ -42,14 +38,16 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     
     // MARK: Collection View Data Source
     
+    //determine number of collection view cells in the collection view
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.memes.count
+        return appDelegate.memes.count
     }
     
+    //add meme image to the collection view cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
-        let meme = self.memes[(indexPath as NSIndexPath).row]
+        let meme = appDelegate.memes[(indexPath as NSIndexPath).row]
         
         // Set the image
         cell.imageView?.image = meme.memedImage
@@ -57,10 +55,11 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         return cell
     }
     
+    //present MemeDetailView when row is selected
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath:IndexPath) {
         
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
-        detailController.memeDetail = self.memes[(indexPath as NSIndexPath).row]
+        detailController.memeDetail = appDelegate.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
         
     }
