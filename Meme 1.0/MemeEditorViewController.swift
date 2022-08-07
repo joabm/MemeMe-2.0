@@ -20,7 +20,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     
-    //MARK: Views
+    //MARK: View life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setInitialView()

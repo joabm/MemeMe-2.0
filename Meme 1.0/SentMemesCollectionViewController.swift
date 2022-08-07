@@ -17,7 +17,7 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     //Access the memes array in AppDelegate
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    // MARK: Life Cycle
+    // MARK: View life cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,6 +25,7 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         collectionView.reloadData()
     }
     
+    //flow layout included for minimum spacing between rows and items
     override func viewDidLoad() {
         super.viewDidLoad()
         

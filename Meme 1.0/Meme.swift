@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//Meme object
 struct Meme {
     let topText: String
     let bottomText: String

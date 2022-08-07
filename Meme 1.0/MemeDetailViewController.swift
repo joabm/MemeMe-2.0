@@ -19,9 +19,10 @@ class MemeDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    // MARK: View life cycle
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //self.label.text = self.villain.name
         self.tabBarController?.tabBar.isHidden = true
         self.imageView!.image = memeDetail.memedImage
     }
