@@ -37,6 +37,16 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
+    //reloads the collection view data everytime the phone orientation changes when viewing the collection view.  to address bug where the collection view was not always correct after chaning orientations.
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isPortrait {
+            collectionView.reloadData()
+        }   else {
+            collectionView.reloadData()
+        }
+    }
+    
     // MARK: Collection View Data Source
     
     //determine number of collection view cells in the collection view
